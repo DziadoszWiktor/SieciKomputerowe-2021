@@ -43,7 +43,7 @@
 | Tablica routingu          | ``$ ip route show ``  | what is gateway?!         | 
 | check nameservers (DNS)   | ``$ cat /etc/resolv.conf ``  | which DNS were set | 
 
-### Konfiguracja połączenia sieciowego
+### Konfiguracja połączenia sieciowego w Alpine
 
 | Parametr | wartość           | komentarzu |
 | ------------- |:-------------:| -----:|
@@ -52,6 +52,29 @@
 | Brama         |  10.0.2.2       | ip route show / default value |
 | DNS 1         |  8.8.8.8        | cat /etc/resolv.conf     |
 | DNS 2         |          |      |
+
+### Konfiguracja połączenia sieciowego w Debian
+
+| Parametr | wartość           | komentarzu |
+| ------------- |:-------------:| -----:|
+| Adres IP      | 10.0.2.15 | ip a/ip addr/ip address/ ip r/hostname -I |
+| Maska podsieci| /24 (255.255.255.0)  11111111.11111111.11111111.0 | ip a/ip addr/ip address/ ip r/hostname -I |
+| Brama         | 10.0.2.2 | ip route show/ip route list |
+| DNS 1         | | cat /etc/resolv.conf or grep "nameserver" /etc/resolv.conf|
+| DNS 2         | | |
+
+### Konfiguracja połączenia sieciowego w Windows
+
+| Parametr | wartość           | komentarzu |
+| ------------- |:-------------:| -----:|
+| Adres IP      | 10.0.2.15 | ipconfig |
+| Maska podsieci| /24 (255.255.255.0)  11111111.11111111.11111111.0 | ipconfig |
+| Brama         | 10.0.2.2 |  |
+| DNS 1         | | |
+| DNS 2         | | |
+
+( Numer maski podsieci - ile bitów o wartości 1 w masce )
+( Brama kieruje komunikacje z ip którego nie ma w sieci)
 
 ### Schemat sieci
 
