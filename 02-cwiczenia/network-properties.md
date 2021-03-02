@@ -41,14 +41,14 @@ Wejściowe parametry sieci
 -------------------------
 | Parametr | wartość | komentarz(opcionalny) |
 | ------------- |:-------------:| -----:|
-|   PC 1 |  
+|   PC 1 |  | |
 | IP - address  | 192.168.10.10 | |
 | MASKA  | 255.255.255.0 | |
 |   |  | |
-| PC 2  |  | |
+| PC 2  |  | połaczenie z 1 na 2 ok (0,500 ms) / z 2 na 1 też ok (600ms) |
 | IP - address  | 192.168.10.11 | |
 | MASKA  | 255.255.128.0 | |
-| PC 2  |  | |
+| PC 2  |  | 1 na 2 network unreachable / 2 na 1 też|
 | IP - address  | 172.16.100.100 | |
 | MASKA  | 255.255.0.0 | |
 
@@ -56,10 +56,13 @@ Weryfikacja połączenia
 
 Polecenie
 ```
+ping *adres Ip*
 ```
 
 Efekt
 ```
+adres 192.168.10.11/17 - polączenie z 192.168.10.10 działa
+adres 192.168.10.10/16 - polączenie z 192.168.10.10 nie działa (Network unreachable)   
 ```
 
 Nowa statyczna konfiguracja 
